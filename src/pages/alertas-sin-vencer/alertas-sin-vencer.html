@@ -1,0 +1,57 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+     <ion-card>
+             <img src="https://www.viacpro.com/ionicConexion/img/requi.jpg"/>
+             <ion-card-content>
+                 <ion-card-title class="card-estilo" style="background-color:#1d1a31; color:#ffffff">
+                 Actuaciones Por Vencer
+                 </ion-card-title>
+            </ion-card-content>
+   </ion-card>
+  
+
+   <ion-card *ngFor="let item of this.actuaciones">
+    <ion-list>
+      <ion-item class="item-estilo">
+        <ion-thumbnail item-start>
+          <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/cliente.png">
+        </ion-thumbnail>
+       
+      </ion-item>
+    </ion-list>
+
+    <ion-card-content style="background-color:#f3f4f5;">
+      <ion-card-title class="formato">
+       
+        </ion-card-title>
+        <h2 class="estiloh">Tipo: {{item.tipo}}</h2>
+        <h2 class="estiloh">Actuación: {{item.actuacion}}</h2>
+        <h2 class="estiloh">Fecha Auto: {{item.fechaAuto}}</h2>
+        <h2 class="estiloh">Fecha Inicio: {{item.fechaInicio}}</h2>
+        <h2 class="estiloh">Fecha Fin: {{item.fechaFin}}</h2>
+        <a href="https://www.viacpro.com/AdminDespacho/procesos/imgProcesos/proceso{{item.idProceso}}/actuaciones/{{item.nombreArchivo}}">Archivo :{{item.nombreArchivo}}</a> 
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+           Inicio
+          </ion-segment-button>
+          
+          <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+            <ion-icon name="exit"></ion-icon>
+            Salir
+          </ion-segment-button>
+ </ion-segment>
+
+</ion-footer>

@@ -1,0 +1,76 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+      
+  
+  <ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+     
+      <ion-card>
+          <img src="https://www.viacpro.com/ionicConexion/img/radicados.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              <h2>N° de Radicado: {{rad.idRad}}</h2>
+              </ion-card-title>
+              <ion-item *ngFor="let item of this.proceso">
+                  <h2><ion-icon name="contact" item-left></ion-icon>Tipo:{{ item.idTipoProceso }}</h2>
+                  <h2><ion-icon name="contacts" item-left></ion-icon>Demandado:{{ item.demandado }} </h2>
+                  <h2><ion-icon name="contacts" item-left></ion-icon>Demandante:{{ item.demandante }}</h2>
+               </ion-item>
+          </ion-card-content>
+        </ion-card>
+  
+        <div padding>
+            <ion-segment  [(ngModel)]="pet" style="background-color:#1d1a31; color:#ffffff">
+              <ion-segment-button  value="kittens" style="color:#ffffff">
+                <ion-icon  name="folder" item-left></ion-icon> Actuaciones
+              </ion-segment-button>
+              <ion-segment-button  value="puppies" style="color:#ffffff">
+                  <ion-icon  name="tablet-portrait"></ion-icon> Archivos
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+          
+          <div [ngSwitch]="pet">
+            <ion-list *ngSwitchCase="'puppies'" style="background-color:#f3f4f5;">
+              <ion-item *ngFor="let archivo of this.archivos">
+                <ion-thumbnail item-start>
+                  <img class="segmen" src="https://www.viacpro.com/ionicConexion/img/multimedia.png">
+                </ion-thumbnail>
+                <h2>{{archivo.nombreArchivo}}</h2>
+              </ion-item>
+              ...
+            </ion-list>
+          
+            <ion-list *ngSwitchCase="'kittens'" style="background-color:#f3f4f5;">
+              <ion-item *ngFor="let actu of this.actuaciones">
+                <ion-thumbnail item-start>
+                    <img class="segmen" src="https://www.viacpro.com/ionicConexion/img/folder.png">
+                </ion-thumbnail>
+                <h2>{{actu.nombreArchivo}}</h2>
+              </ion-item>
+              ...
+            </ion-list>
+          </div>
+  
+     
+  
+  </ion-content>
+  
+  <ion-footer>
+    <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+            <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+             <ion-icon name="home"></ion-icon>
+             Inicio
+            </ion-segment-button>
+            
+            <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+              <ion-icon name="exit"></ion-icon>
+              Salir
+            </ion-segment-button>
+   </ion-segment>
+
+</ion-footer>

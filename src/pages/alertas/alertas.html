@@ -1,0 +1,61 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+     <ion-card>
+             <img src="https://www.viacpro.com/ionicConexion/img/requi.jpg"/>
+             <ion-card-content>
+                 <ion-card-title class="card-estilo" style="background-color:#1d1a31; color:#ffffff">
+                 Alertas Actuaciones
+                 </ion-card-title>
+            </ion-card-content>
+   </ion-card>
+  
+   <ion-list>
+    <ion-item class="item-estilo" (click)="irAlertasDia()">
+      <ion-thumbnail item-start>
+        <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/alertas.png">
+      </ion-thumbnail>
+      Actuaciones del día
+    </ion-item>
+  </ion-list>
+
+  <ion-list style="background-color:#f3f4f5;">
+    <ion-item class="item-estilo" (click)="irAlertasSinVencer()">
+      <ion-thumbnail item-start>
+        <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/alertasSinVencer.png">
+      </ion-thumbnail>
+       Actuaciones a vencer
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item class="item-estilo" (click)="irAlertasVencidas()">
+      <ion-thumbnail item-start>
+        <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/alertasVencidas.png">
+      </ion-thumbnail>
+       Actuaciones vencidas
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+           Inicio
+          </ion-segment-button>
+          
+          <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+            <ion-icon name="exit"></ion-icon>
+            Salir
+          </ion-segment-button>
+ </ion-segment>
+
+</ion-footer>

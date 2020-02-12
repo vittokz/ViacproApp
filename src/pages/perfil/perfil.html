@@ -1,0 +1,41 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+      
+      <ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+            <ion-card style="background-color:#f3f4f5;">
+                    
+                    <ion-card-content style="background-color:#f3f4f5;">
+                        <ion-card-title class="card-estilo" style="background-color:#1d1a31; color:#ffffff">
+                        Información de Usuario
+                        </ion-card-title>
+                        <ion-item *ngFor="let item of this.items" style="background-color:#f3f4f5;">
+                          <h2><ion-icon name="contact" item-left></ion-icon>C.C:{{ item.cedula_cliente }}</h2>
+                          <h2><ion-icon name="contacts" item-left></ion-icon>Nombre:{{ item.nombre }} {{ item.apellido }} </h2>
+                          <h2><ion-icon name="call" item-left></ion-icon>Tel:{{ item.telefono }}</h2>
+                          <h2><ion-icon name="phone-portrait" item-left></ion-icon>Cel:{{ item.celular }}</h2>
+                          <h2><ion-icon name="mail" item-left></ion-icon>Email:{{ item.email }}</h2>
+                       </ion-item>
+                    </ion-card-content>
+          </ion-card>
+         
+      </ion-content>
+      
+      <ion-footer>
+            <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+                    <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+                     <ion-icon name="home"></ion-icon>
+                     Inicio
+                    </ion-segment-button>
+                    
+                    <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+                      <ion-icon name="exit"></ion-icon>
+                      Salir
+                    </ion-segment-button>
+           </ion-segment>
+        
+        </ion-footer>

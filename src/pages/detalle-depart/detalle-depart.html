@@ -1,0 +1,37 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+  <h2>Procesos encontrados</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of this.procesos">
+      <ion-thumbnail item-start>
+        <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/cliente.png">
+      </ion-thumbnail>
+      <h2>Tipo Proceso: {{item.idTipoProceso}}</h2>
+      <p>N° Rad: {{item.idRadicado}}</p>
+      <p>Nombre: {{item.demandado}}</p>
+      <button ion-button clear item-end (click)="listarProcesos(({ idRad: item.idRadicado }))">Ver</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+           Inicio
+          </ion-segment-button>
+          
+          <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+            <ion-icon name="exit"></ion-icon>
+            Salir
+          </ion-segment-button>
+ </ion-segment>
+
+</ion-footer>

@@ -1,0 +1,60 @@
+<ion-header >
+    <ion-toolbar>
+          <ion-title style="background-color:#ffcf40"> 
+              <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+          </ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+ <ion-content padding class="fondo" style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+     <h6 style="background-color: #1d1a31; color:aliceblue">Usuario: {{idenRecibida}}</h6> 
+      <hr><ion-grid>
+          <ion-row>
+            <ion-col>
+                <img (click)="irPerfil()" class="menu" src="https://www.viacpro.com/ionicConexion/img/perfil.png" alt="">
+            </ion-col>
+            <ion-col>
+                <img (click)="irJuzgados()" class="menu" src="https://www.viacpro.com/ionicConexion/img/juzgados.png" alt="">
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+              <ion-col>
+                  <img (click)="irProcesos()" class="menu" src="https://www.viacpro.com/ionicConexion/img/radicado.png" alt="">
+              </ion-col>
+              <ion-col>
+                  <img (click)="irAlertas()" class="menu" src="https://www.viacpro.com/ionicConexion/img/alertas.png" alt="">
+              </ion-col>
+          </ion-row>
+  
+          <ion-row>
+              <ion-col>
+                  <img (click)="irSoporte()" class="menu" src="https://www.viacpro.com/ionicConexion/img/atenciocliente.png" alt="">
+              </ion-col>
+              <ion-col>
+                <a href="tel:3116480997">
+                   <img class="menu" src="https://www.viacpro.com/ionicConexion/img/tele.png" alt="">
+                </a>  
+              </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col>
+                <img (click)="exit()" class="menu" src="https://www.viacpro.com/ionicConexion/img/salir.png" alt="">
+            </ion-col>
+            <ion-col>
+               
+            </ion-col>
+        </ion-row>
+       </ion-grid>
+  
+        
+  </ion-content>
+  <ion-footer style="background-color: #1d1a31">
+    
+  </ion-footer>
+
+
+  
+  
+  

@@ -1,0 +1,118 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="https://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+    <ion-list style="background-color:#f3f4f5;">
+      <ion-item class="item-estilo">
+        <ion-thumbnail item-start>
+          <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/radicado.png">
+        </ion-thumbnail>
+        <p>Buscar por Radicado</p>
+          <ion-item>
+            <form [formGroup]="fRadicado" (ngSubmit)="busqRadicado()">
+              <ion-list>
+                <ion-item>
+                    <ion-input formControlName="radicado" type="text" placeholder="Número"></ion-input>
+              </ion-item>
+              </ion-list>
+             <button style="background-color:#1d1a31; color:#ffcf40" class="button-estilo" ion-button><ion-icon name="search"></ion-icon> Buscar</button>
+            </form>
+          </ion-item>
+      </ion-item>
+    </ion-list>
+   
+    <ion-list style="background-color:#f3f4f5;">
+      <ion-item class="item-estilo">
+        <ion-thumbnail item-start>
+          <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/demandado.png">
+        </ion-thumbnail>
+        <p>Buscar por Demandado</p>
+          <ion-item>
+            <form [formGroup]="fDemandado" (ngSubmit)="busqDemandado()">
+              <ion-list>
+                <ion-item>
+                    <ion-input formControlName="demandado" type="text" placeholder="Nombre"></ion-input>
+              </ion-item>
+              </ion-list>
+            <button style="background-color:#1d1a31; color:#ffcf40" class="button-estilo" (click)="busqDemandado()" ion-button>
+                <ion-icon name="search"></ion-icon> Buscar</button>
+          </form>
+          </ion-item>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list>
+      <ion-item class="item-estilo">
+        <ion-thumbnail item-start>
+          <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/demandante.png">
+        </ion-thumbnail>
+        <p>Buscar por Demandante</p>
+          <ion-item>
+            <form [formGroup]="fDemandante" (ngSubmit)="busqDemandante()">
+              <ion-list>
+                <ion-item>
+                    <ion-input formControlName="demandante" type="text" placeholder="Nombre"></ion-input>
+              </ion-item>
+              </ion-list>
+            <button style="background-color:#1d1a31; color:#ffcf40" class="button-estilo" ion-button>
+                <ion-icon name="search"></ion-icon> Buscar</button>
+          </form>
+          </ion-item>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-list>
+      <ion-item class="item-estilo">
+        <ion-thumbnail item-start>
+          <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/municipio.png">
+        </ion-thumbnail>
+        <p>Buscar por Municipio</p>
+          <ion-item>
+            <form [formGroup]="fMunicipio" (ngSubmit)="busqMunicipio()">
+              <ion-list>
+                <ion-item>
+                    <ion-input type="text" formControlName="municipio" placeholder="Municipio"></ion-input>
+              </ion-item>
+              </ion-list>
+            <button style="background-color:#1d1a31; color:#ffcf40" class="button-estilo" (click)="busqMunicipio()" ion-button>
+                <ion-icon name="search"></ion-icon> Buscar</button>
+          </form>
+          </ion-item>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item class="item-estilo">
+        <ion-thumbnail item-start>
+          <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/departamento.png">
+        </ion-thumbnail>
+        <p>Buscar Departamento</p>
+          <ion-item>
+                           
+            <button style="background-color:#1d1a31; color:#ffcf40" i class="button-estilo" ion-button (click)="busqDepartamento()">
+                <ion-icon name="search"></ion-icon> Buscar</button>
+          </ion-item>
+      </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+           Inicio
+          </ion-segment-button>
+          
+          <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+            <ion-icon name="exit"></ion-icon>
+            Salir
+          </ion-segment-button>
+ </ion-segment>
+
+</ion-footer>

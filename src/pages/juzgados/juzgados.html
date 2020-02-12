@@ -1,0 +1,44 @@
+<ion-header >
+  <ion-toolbar>
+        <ion-title style="background-color:#ffcf40"> 
+            <img src="http://www.viacpro.com/AdminDespacho/img/viacpro.png" style="align-items: center; width: 100%;" alt="">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('https://www.viacpro.com/AdminDespacho/img/fondoHome.png');">
+     <ion-card>
+             <img src="https://www.viacpro.com/ionicConexion/img/juzgados.jpg"/>
+             <ion-card-content>
+                 <ion-card-title class="card-estilo" style="background-color:#1d1a31; color:#ffffff">
+                 Listado de Juzgados
+                 </ion-card-title>
+            </ion-card-content>
+   </ion-card>
+  
+   <ion-list>
+    <ion-item *ngFor="let item of this.items" style="background-color:#f3f4f5;">
+      <ion-thumbnail item-start>
+        <img class="estilo" src="https://www.viacpro.com/ionicConexion/img/juzgado2.png">
+      </ion-thumbnail>
+      <h2><ion-icon name="folder-open" item-left></ion-icon>{{ item.nombre }}</h2>
+      <button ion-button clear item-end (click)="detalleJuzgado(({ idJuz: item.idJuzgado }))">Ver</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-segment [(ngModel)]="mymodel" style="background-color:#1d1a31; color:#ffcf40">
+          <ion-segment-button style="color:#ffcf40" (click)="irMenu()" value="segment1">
+           <ion-icon name="home"></ion-icon>
+           Inicio
+          </ion-segment-button>
+          
+          <ion-segment-button style="color:#ffcf40" (click)="exit()" class="segmento" value="segment2">
+            <ion-icon name="exit"></ion-icon>
+            Salir
+          </ion-segment-button>
+ </ion-segment>
+
+</ion-footer>
